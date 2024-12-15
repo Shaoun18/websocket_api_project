@@ -24,7 +24,7 @@
      ```
    - You may need to create the SQLite database file before running the application.
 
-   ![Database Configuration](public/images/database-config.png)
+   ![Database](public/web_images/Database.png)
 
 4. **Generate an application key** by running the following command:
    ```bash
