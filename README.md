@@ -1,43 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
 ## Instructions to Run the Project
 
-Clone or download the project source code to your local machine.
-Install the required dependencies by running the following command in the project directory:
+1. **Clone the project source code** to your local machine:
+   ```bash
+   git clone https://github.com/yourusername/laravel-todo-list.git
+   cd laravel-todo-list
+   ```
 
-## composer update at first
-- composer update
+2. **Install the required dependencies** by running the following command in the project directory:
+   ```bash
+   composer update
+   ```
 
-## Configure the database connection by copying the .env.example file and renaming it to .env. Update the database credentials in the .env file to match your local environment.
+3. **Configure the database connection**:
+   - Copy the `.env.example` file and rename it to `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Open the `.env` file in a text editor and update the database configuration to match your local environment:
+     ```bash
+     DB_CONNECTION=sqlite
+     DB_DATABASE=/path/to/database.sqlite
+     ```
+   - You may need to create the SQLite database file before running the application.
 
-## Generate an application key by running the following command:
+   ![Database Configuration](public/images/database-config.png)
 
-- php artisan key:generate
+4. **Generate an application key** by running the following command:
+   ```bash
+   php artisan key:generate
+   ```
 
-## Run the database migrations to create the necessary tables by executing the following command:
+5. **Run the database migrations** to create the necessary tables by executing the following command:
+   ```bash
+   php artisan migrate
+   ```
 
-- php artisan migrate
+6. **Generate the user dataset using the seeder**:
+   ```bash
+   php artisan db:seed --class=UsersTableSeeder
+   ```
 
-## Generate the user dataset using the seeder:
+7. **Start the Laravel development server**:
+   ```bash
+   php artisan serve
+   ```
 
-- php artisan db:seed --class=UsersTableSeeder
+8. **In a separate terminal window, start the WebSocket server**:
+   ```bash
+   php artisan websocket:serve
+   ```
+   - Now connect to the WebSocket server at `ws://localhost:8080`.
 
-## Start the Laravel development server:
+9. **Run the Laravel queue worker**:
+   ```bash
+   php artisan queue:work
+   ```
 
-- php artisan serve
+---
 
-## In a separate terminal window, start the WebSocket server:
-
-- php artisan websocket:serve
-- Now connect to the WebSocket server at ws://localhost:8080.
-
-## Run the Laravel queue worker:
-
-- php artisan queue:work
+This setup adds clarity and visual aid to your instructions by guiding users on how to configure the database connection and showing them the corresponding screenshot.

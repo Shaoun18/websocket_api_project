@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 20000; $i++) {
+        for ($i = 0; $i < 200; $i++) {
 
             User::create([
                 'name' => $faker->name,
