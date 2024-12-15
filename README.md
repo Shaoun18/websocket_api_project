@@ -20,9 +20,8 @@
    - Open the `.env` file in a text editor and update the database configuration to match your local environment:
      ```bash
      DB_CONNECTION=sqlite
-     DB_DATABASE=/path/to/database.sqlite
+     DB_DATABASE=/path/to/database
      ```
-   - You may need to create the SQLite database file before running the application.
 
    ![Database](public/web_images/Database.png)
 
@@ -57,6 +56,3 @@
    php artisan queue:work
    ```
 
----
-
-This setup adds clarity and visual aid to your instructions by guiding users on how to configure the database connection and showing them the corresponding screenshot.
